@@ -62,6 +62,45 @@ We use two motion sensors, one for inside movement detection and the other for o
 2. **the second is used for output pin (GPIO23); and,**    
 3. **the last one is used for power (Vcc).**   
 
-The sensor works for VCC 5-12V, so the green cable is plugged in the 5V pin on Raspberry X.
+The sensor works for VCC 5-12V, so the green cable is plugged in the 5V pin on Raspberry X.    
+<img src="https://user-images.githubusercontent.com/76787087/103378431-f3eb0300-4aea-11eb-978b-640de27cbbf8.png" width="350">     
+We connect the other motion sensor following the same steps. However, we use a different output pin, the GPIO24.  
 
-<img src="" width="500">
+#### GT-511C1R Fingerprint sensor
+The sensor works with serial communication and uses the UART protocol. To activate the communication between the fingerprint sensor and Raspberry X, we enable the serial port of X as follows:   
+**`sudo raspi-config`**   
+**`select option – Interface Options`**   
+**`select option- Serial`**   
+**`enable`**   
+The UART needs two pins: one to read and the other to write. The UART pins of the Raspberry are GPIO14 (Tx) and GPIO15 (Rx). To connect the fingerprint sensor with Raspberry X we use four cables:   
+1. connects the sensor’s Tx pin with the Rapsberry’s Rx;   
+2. connects the sensor’s Rx pin with the Rapsberry’s Tx;   
+3. for ground (GND); and,   
+4. for power (Vcc).     
+
+The sensor works for VCC 3.3-6V, so the red cable is plugged in the 3V pin of Raspberry X.     
+<img src="https://user-images.githubusercontent.com/76787087/103378613-8c818300-4aeb-11eb-9009-7380c95aec73.png" width="350">     
+
+### Using Raspberry Pi as access point
+To control the traffic of IoT devices we use Raspberry X as access point. We connect Raspberry X with a router through an ethernet cable. A bridge must be created between the wireless device and the Ethernet device at Raspberry X access point. This bridge will pass all traffic between the two interfaces.    
+1. Update and upgrade Raspberry X:   
+**`sudo apt-get update`**    
+**`sudo apt-get upgrade`**   
+2. Install hostapd and bridge-utils:   
+**`sudo apt-get install hostapd`**   
+**`sudo apt-get install bridge-utils`**   
+3. Unmask and activate hostapd to work properly:     
+**`sudo systemctl unmask hostapd`**   
+**`sudo systemctl enable hostapd`**      
+**`sudo systemctl start hostapd`**    
+4. Edit file /etc/hostapd/hostapd.conf to seem like the following:       
+<img src="https://user-images.githubusercontent.com/76787087/103377236-7d003b00-4ae7-11eb-9833-6fccbb06391a.jpg" width="500">       
+5. Edit file /etc/network/interfaces to seem like the following:       
+<img src="https://user-images.githubusercontent.com/76787087/103377282-a7ea8f00-4ae7-11eb-9050-4a0e4e8be97d.png" width="500">      
+6. Edit the file /etc/default/hostapd as follows: 
+
+**`DAEMON_CONF=” /etc/hostapd/hostapd.conf”`**        
+**`RUN_DAEMON=yes`**          
+7. Reboot  
+
+### Other 
