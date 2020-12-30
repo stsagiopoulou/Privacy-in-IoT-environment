@@ -103,4 +103,7 @@ To control the traffic of IoT devices we use Raspberry X as access point. We con
 **`RUN_DAEMON=yes`**          
 7. Reboot  
 
-### Other 
+### Other libraries you need
+**`sudo apt install mariadb-servers`**      
+**`sudo apt-get install iptables`**    
+**`sudo apt-get install python3 flask`**    
