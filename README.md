@@ -64,4 +64,4 @@ We use two motion sensors, one for inside movement detection and the other for o
 
 The sensor works for VCC 5-12V, so the green cable is plugged in the 5V pin on Raspberry X.
 
-
+<img src="" width="500">
