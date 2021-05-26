@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <main>
+<style>
+  h3 {
+    margin-top:25px;
+    font-style:italic;
+    text-align: center;
+  }
+  tr:nth-child(even) {background-color: #F0F8FF;}
+  th {
+  background-color: #000000;
+  color: white;
+}
+  table {
+    margin-left:550px;
+    margin-top: 50px;
+   
+    border-collapse: collapse;
+  }
+   
+   table.center {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 100%;
+}
+
+html, body {
+    width: 100% ;
+}
+  th {
+    text-align: left;
+  }
+  .button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 1px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  }
+  .button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #101010;
+    border-radius:15px;
+  }
+
+  .button2:hover {
+    background-color: #101010;
+    color: white;
+  }
+
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #101010;
+    border-radius:15px;
+  }
+
+  .button1:hover {
+    background-color: #101010;
+    color: white;
+  }
+.close {
+  position:absolute;
+  right: 10px;
+  top: 65px;
+  width: 25px;
+  height: 25px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 10px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+  </style>
+<a href="/end" class="close"></a>
+  <div>
+<h3>IoT Συσκευές</h3>
+<body>
+<table class="center">
+    <thead>
+        <tr>
+            <th>Όνομα</th>
+            <th>Κατηγορία</th>
+            <th>Mac διεύθυνση</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in value %}
+            <tr>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                 <td><button class="button button1" type="submit" onclick="window.location.href='{{ url_for( 'delete',name=row[1] ) }}'">Delete</button>
+                  </td>
+              </tr>
+
+        {% endfor %}
+      </tbody>
+  </table>
+  <div class="h2">
+  <button class="button button2" type="submit" onclick="window.location.href='{{ url_for( 'insert') }}'">Insert device</button>
+</div>
+</body>
+</div>
+  </main>
+{% endblock %}
+

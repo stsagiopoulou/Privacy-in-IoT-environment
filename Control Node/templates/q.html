@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <main>
+      <style>
+        .first {
+    text-align: center;
+    margin-top: 25px;
+    padding: 20px;
+}
+.button{
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+cursor: pointer;
+
+
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  text-align: center;
+  border: 2px solid #101010;
+  border-radius:15px;
+}
+
+.button1:hover {
+  background-color: #101010;
+  text-align: center;
+  color: white;
+}
+.container {
+  text-align: center;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  text-align: center;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.checkmark {
+  margin-top:10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+
+.container:hover input ~ .checkmark {
+  text-align: center;
+  background-color: #ccc;
+}
+
+
+.container input:checked ~ .checkmark {
+  text-align: center;
+  background-color: #101010;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  text-align: center;
+  display: block;
+}
+
+
+.container .checkmark:after {
+ 	top: 5px;
+	left: 5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: white;
+}
+h3{
+  margin-bottom:20px;
+}
+p.ex1 {
+  border: 2px solid black;
+  border-radius:15px;
+}
+</style>
+<div class="first">
+      <form  action="" method="POST">
+        <p class="ex1">Κατηγορία: Εικόνα</p>
+        <h4>1. Θέλετε οι κάμερες να είναι τελείως κλειστές;</h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q1" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q1" value="0">
+            <span class="checkmark"></span>
+          </label>
+        <h4> 2. Να επιτρέπεται στις συσκευές να στέλνουν πληροφορίες σε ελεγχόμενες IP; </h4>
+        <label class="container">Ναι <input type="radio" checked="checked" name="q2" value="1">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Όχι
+          <input type="radio" checked="checked" name="q2" value="0">
+          <span class="checkmark"></span>
+        <h4> 3. Θέλετε το bit rate να είναι ελεγχόμενο; </h4>
+        <label class="container">Ναι <input type="radio" checked="checked" name="q3" value="1">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container">Όχι <input type="radio" checked="checked" name="q3" value="0">
+          <span class="checkmark"></span>
+        </label>
+    </div>
+    <div class="first">
+      <form  action="" method="POST">
+        <p class="ex1">Κατηγορία: Ήχος</p>
+        <h4>1. Θέλετε τα μικρόφωνα να είναι τελείως κλειστά;</h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q4" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q4" value="0">
+            <span class="checkmark"></span>
+          </label>
+          <h4> 2. Να επιτρέπεται στις συσκευές να στέλνουν πληροφορίες σε ελεγχόμενες IP; </h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q5" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q5" value="0">
+            <span class="checkmark"></span>
+            <h4> 3. Θέλετε το bit rate να είναι ελεγχόμενο; </h4>
+            <label class="container">Ναι <input type="radio" checked="checked" name="q6" value="1">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">Όχι <input type="radio" checked="checked" name="q6" value="0">
+              <span class="checkmark"></span>
+            </label>
+  </div>
+  <div class="first">
+    <form  action="" method="POST">
+        <p class="ex1">Κατηγορία: Κίνηση</p>
+        <h4>1. Θέλετε οι αισθήτηρες κίνησης να είναι τελείως κλειστοί;</h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q7" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q7" value="0">
+            <span class="checkmark"></span>
+          </label>
+          <h4> 2. Να επιτρέπεται στις συσκευές να στέλνουν πληροφορίες σε ελεγχόμενες IP; </h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q8" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q8" value="0">
+            <span class="checkmark"></span>
+          <h4> 3. Θέλετε το bit rate να είναι ελεγχόμενο; </h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q9" value="1">
+          <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι <input type="radio" checked="checked" name="q9" value="0">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="first">
+          <form  action="" method="POST">
+        <p class="ex1">Κατηγορία: Περιβάλλον</p>
+        <h4>1. Θέλετε οι αισθητήρες περιβάλλοντος να είναι τελείως κλειστοί;</h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q10" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q10" value="0">
+            <span class="checkmark"></span>
+          </label>
+          <h4> 2. Να επιτρέπεται στις συσκευές να στέλνουν πληροφορίες σε ελεγχόμενες IP; </h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q11" value="1">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι
+            <input type="radio" checked="checked" name="q11" value="0">
+            <span class="checkmark"></span>
+          <h4> 3. Θέλετε το bit rate να είναι ελεγχόμενο; </h4>
+          <label class="container">Ναι <input type="radio" checked="checked" name="q12" value="1">
+          <span class="checkmark"></span>
+          </label>
+          <label class="container">Όχι <input type="radio" checked="checked" name="q12" value="0">
+            <span class="checkmark"></span>
+          </label>
+</div>
+        <div class="first">
+        <button class="button button1" type="submit" value="Submit">Submit</button>
+      </div>
+      </form>
+      </main>
+{% endblock %}   

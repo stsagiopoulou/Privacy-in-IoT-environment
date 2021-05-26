@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+
+h4{
+  font-family: "Comic Sans MS";
+  margin-top:25px;
+  text-align: center;
+  font-style: italic;
+}
+h6{
+  font-family: "Comic Sans MS";
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h5{
+font-family: "Comic Sans MS";
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+img{
+    margin: 0 auto;
+    display: block;
+    width:300px;
+    height:200px;
+}
+</style>
+<div>
+<h4 style="color:black;">Οδηγίες εγγραφής</h4>
+<h6> 1. Μόλις ανάψει το μπλε led του αισθητήρα τοποθετήστε πάνω το δάχτυλο σας.</h6>
+<h6> 2. Μόλις σβήσει, αποσύρετε το δάχτυλο σας.</h6>
+<h6> 3. Αν ο αισθητήρας σβήσει και δεν ανάψει πάλι, το αποτύπωμα έχει αποθηκευτεί ήδη.</h6>
+<h6> 4. Διαφορετικά, με βάση τις οδηγίες 1-2, πρέπει να τοποθετήσετε το δάχτυλο σας στον αισθητήρα 3 φορές για να γίνει σωστά η εγγραφή.</h6>
+<img src="/static/images/c.gif" class="img">
+<div id="text1" style="display:none; margin:auto 0; text-align:center">Τοποθετήστε το δάχτυλο σας</div> 
+<h5>Για να ξεκινήσετε την διαδικασία πατήστε <a href="/process2" onclick="showText('text1')" href="javajavascript:void(0)"><font color="red"> εδώ </font> </a></h5>
+<script language="JavaScript">
+   function showText(id)
+    {
+        document.getElementById(id).style.display = "block";
+
+    }
+
+</script>
+
+</div>
+
+
+{% endblock %}

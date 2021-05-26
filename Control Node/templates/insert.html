@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+  h5{
+    margin-top:25px;
+    margin-bottom:20px;
+    text-align:center;
+    font-style: italic;
+    font-family: "Comic Sans MS"
+  }
+  h7{
+    margin-top:25px;
+    margin-bottom:10px;
+    text-align:center;
+    font-style : italic;
+    font-family: "Comic Sans MS"
+  }
+
+  form{
+    margin-top:20px;
+    margin-bottom:5px;
+    text-align:center;
+  }
+input{
+  border-radius:15px;
+  border-color:black;
+}
+.button{
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+cursor: pointer;
+
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #101010;
+  border-radius:15px;
+}
+
+.button1:hover {
+  background-color: #101010;
+  color: white;
+
+</style>
+  <form action="" method="POST">
+    <h5>Εισάγετε το όνομα της συσκευής και την κατηγορία στην οποία ανήκει ώστε να εισαχθεί στις διαχειριζόμενες συσκεύες</h5>
+    <div>
+    <h7>Οι κατηγορίες είναι: eikona,ixos,kinisi,periballon </h7>
+    </div>
+    <div>
+    <h7>Στο πεδίο Trust IP εισάγετε ένα ! πριν την IP </h7> 
+    </div>
+    <div class="form-group" style="margin-top:20px;">
+    <br><br>
+    Κατηγορία:
+      <input type="text" name="category" value="">
+    <br><br>
+    Όνομα:
+    <input type="text" name="name" value="">
+    <br><br>
+    MAC διεύθυνση:
+    <input type="text" name="mac" value="">
+    <br><br>
+    IP διεύθυνση:
+    <input type="text" name="IP" value="">
+    <br><br>
+    Trust IP:
+    <input type="text" name="IPtrust" value="">
+    <br><br>
+    <button class="button button1" type="submit" value="Submit">Submit</button>
+  </form>
+
+
+{% endblock %}

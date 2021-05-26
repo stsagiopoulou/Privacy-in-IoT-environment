@@ -1,0 +1,40 @@
+<html>
+<style>
+div{
+ font-family: "Comic Sans MS"
+}
+a {
+   font-family: "Comic Sans MS"
+}
+.button{
+   font-family: "Comic Sans MS"
+}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width", initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Document </title>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Your Privacy</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+  </div>
+</nav>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>
+
