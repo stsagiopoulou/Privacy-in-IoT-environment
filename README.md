@@ -14,7 +14,7 @@ In this project, we:
 * Used two Raspberry Pi (hereby referred to as X and Y, respectively) which represent two communicating nodes with separate functions. Their role is to keep the private and public keys safe. Raspberry Y contains the private and public keys and decrypts the data. Raspberry X, (i) contains the database, (ii) is the access point, and (iii) connects with the sensors. The required information is passed from one Raspberry to the other via bluetooth communication
 <img src="https://user-images.githubusercontent.com/76787087/103372743-85eb0f80-4adb-11eb-90f7-76f89a272588.png" width="500">
 
- * Raspberry Image from: "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_3_illustration.svg" *
+ *Raspberry Image from: "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_3_illustration.svg"*
 
 
 ### Establish communication between two Raspberry Pi 3 without internet
